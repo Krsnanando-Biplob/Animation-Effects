@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> CSS Animation Effects</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #111;
+    }
+    .conainer{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      position: relative;
+    }
+    .conainer .rign{
+      position: relative;
+      width: 150px;
+      height: 159px;
+      margin: -30px;
+      border-radius: 50%;
+      border: 4px solid transparent;
+      border-top: 4px solid #14ecff;
+      animation: ani 4s linear infinite;
+
+    }
+    @keyframes ani{
+      0%{
+        transform: rotate(0deg);
+      }
+      100%{
+        transform: rotate(360deg);
+      }
+    }
+    .conainer .rign::before{
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      border-radius: 50%;
+      content: "";
+      background: #24ecff;
+      box-shadow: 0 0 0 5px #24ecff33, 0 0 0 10px  #24ecff22,
+      0 0 0 20px  #24ecff11, 0 0  20px  #24ecff, 0 0  50px  #24ecff;
+    }
+    
+    @keyframes ani1{
+      0%{
+        transform: rotate(-360deg);
+      }
+      100%{
+        transform: rotate(0deg);
+      }
+    }
+    
+    .conainer .rign:nth-child(3){
+      position: absolute;
+      top: 60.66px;
+      animation: ani1 4s linear infinite;
+      animation-delay: -2s;
+    }
+    .conainer .rign:nth-child(2){
+      position: absolute;
+      top: -70.66px;
+      animation: ani2 4s linear infinite;
+      animation-delay: -1s;
+    }
+    @keyframes ani2{
+      0%{
+        transform: rotate(-360deg);
+      }
+      100%{
+        transform: rotate(0deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="conainer">
+    <div class="rign"></div>
+    <div class="rign"></div>
+    <div class="rign"></div>
+  </div>
+</body>
+</html>
